@@ -7,6 +7,7 @@ import { defineConfig, squooshImageService } from "astro/config";
 import remarkCollapse from "remark-collapse";
 import remarkToc from "remark-toc";
 import config from "./src/config/config.json";
+import awsAmplify from 'astro-aws-amplify';
 
 // https://astro.build/config
 export default defineConfig({
@@ -41,6 +42,7 @@ export default defineConfig({
     }),
     mdx(),
   ],
+  adapter: awsAmplify(),
   markdown: {
     remarkPlugins: [
       remarkToc,
